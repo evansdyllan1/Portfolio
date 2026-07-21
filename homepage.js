@@ -1,22 +1,22 @@
 const featuredProjects = [
     {
-        title: "Clippy Is Here to Help",
+        title: "Line Notes",
         description:
-            "An interactive Windows-inspired website combining digital art, frontend development, and a playable puzzle.",
-        image: "img/stillfromproject1.jpg",
-        alt: "Clippy Is Here to Help project preview",
-        link: "interactive.html"
+            "An interactive web project that visualized ancestory through technology using Three.js, WebGL, and Frontend development.",
+        image: "img/linenotes.png",
+        alt: "Line Notes project preview",
+        link: "linenotes.html"
     },
     {
-        title: "You Are the Player",
+        title: "The Art Market",
         description:
-            "A video artwork exploring nostalgia, childhood memories, and the Minecraft end poem.",
+            "Capstone Project 2025-2026",
         image: "img/stillfromproject4.jpg",
         alt: "Still from You Are the Player",
         link: "videoart.html"
     },
     {
-        title: "3D Portfolio",
+        title: "",
         description:
             "An interactive Three.js portfolio featuring 3D models, video work, music, and an explorable digital island.",
         image: "img/stillfromproject3.jpg",
@@ -94,11 +94,8 @@ function showProject(index) {
         currentProject = 0;
     }
 
-    featuredCard.classList.add("fade");
-
     window.setTimeout(() => {
         updateProjectContent();
-        featuredCard.classList.remove("fade");
     }, 200);
 }
 
@@ -126,15 +123,6 @@ function handleSwipe() {
 previousButton.addEventListener("click", showPreviousProject);
 nextButton.addEventListener("click", showNextProject);
 
-featuredSection.addEventListener("touchstart", (event) => {
-    touchStartX = event.changedTouches[0].screenX;
-});
-
-featuredSection.addEventListener("touchend", (event) => {
-    touchEndX = event.changedTouches[0].screenX;
-    handleSwipe();
-});
-
 document.addEventListener("keydown", (event) => {
     if (event.key === "ArrowLeft") {
         showPreviousProject();
@@ -147,3 +135,4 @@ document.addEventListener("keydown", (event) => {
 
 createDots();
 updateProjectContent();
+

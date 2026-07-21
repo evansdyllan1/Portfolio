@@ -1,3 +1,4 @@
+/* Global */
 html {
     scroll-behavior: smooth;
 }
@@ -7,37 +8,34 @@ html {
 }
 
 body {
-    margin: 0;
-    padding: 0;
-
+    padding: 5px;
     font-family: monospace;
-    color: #000000;
-    background-color: #d8deec;
+    color: #0c0e13;
+    background-color: #e0e5f1;
 }
-
-/* Optional background used on 3D pages */
-
+/* 3D background */
 .threeD::before {
     content: "";
     position: fixed;
     inset: 0;
     z-index: -1;
-
     background-image: url("img/Artboard 1.png");
     background-repeat: repeat;
     background-size: 900px;
     opacity: 0.2;
 }
 
+/* Shared page widths */
 .about,
 .landingHero,
 .columns,
 .videoarthero,
 .assignments {
-    width: min(1000px);
+    width: min(1000px, calc(100% - 30px));
     margin: 35px auto;
 }
 
+/* Shared containers */
 .hero,
 .about,
 .home-featured,
@@ -48,13 +46,13 @@ body {
 .project {
     background-color: #f0f0f0;
     border-radius: 10px;
-
     border-top: 5px solid #ffffff;
     border-left: 5px solid #ffffff;
     border-right: 5px solid #9fa1bb;
     border-bottom: 5px solid #9fa1bb;
 }
 
+/* Shared buttons */
 .hero-buttons a,
 .viewMore,
 .project a,
@@ -62,6 +60,7 @@ body {
     display: inline-block;
     padding: 10px 18px;
     font-family: inherit;
+    font-weight: 700;
     text-decoration: none;
     color: #ffffff;
     background-color: #8a8eb9;
@@ -86,19 +85,28 @@ body {
 .project a:active,
 .backButton:active {
     transform: translate(2px, 2px);
-
-    border-top: 2px solid #636474;
-    border-left: 2px solid #6d6e7f;
-    border-right: 2px solid #ffffff;
-    border-bottom: 2px solid #ffffff;
+    border-top: 4px solid #636474;
+    border-left: 4px solid #6d6e7f;
+    border-right: 4px solid #ffffff;
+    border-bottom: 4px solid #ffffff;
 }
 
+/* Navigation */
 nav {
-    width: 100%;
-    padding: 4px 10px;
+    width: min(1000px, calc(100% - 30px));
+    margin: 0 auto;
+    padding: 20px 0;
+
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
+    gap: 20px;
+}
+
+nav h2 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 700;
 }
 
 nav ul {
@@ -106,7 +114,7 @@ nav ul {
     padding: 0;
 
     display: flex;
-    gap: 5px;
+    gap: 22px;
 }
 
 nav li {
@@ -114,10 +122,11 @@ nav li {
 }
 
 nav a {
-    padding: 1px 1px;
+    padding: 6px 10px;
+
     color: #000000;
     text-decoration: none;
-    font-size: 12px;
+    font-size: 18px;
     border: 2px solid transparent;
     cursor: pointer;
 }
@@ -125,7 +134,6 @@ nav a {
 nav a:hover {
     color: #000000;
     background-color: #f0f0f0;
-
     border-top: 2px solid #ffffff;
     border-left: 2px solid #ffffff;
     border-right: 2px solid #9fa1bb;
@@ -134,164 +142,159 @@ nav a:hover {
 
 nav a:active {
     background-color: #d8deec;
-
     border-top: 2px solid #9fa1bb;
     border-left: 2px solid #9fa1bb;
     border-right: 2px solid #ffffff;
     border-bottom: 2px solid #ffffff;
 }
 
-.home-layout {
-    width: min(1100px);
-    margin: 25px auto 30px;
-    display: grid;
-    grid-template-columns: .8fr .5fr .8fr;
-    grid-template-rows: auto minmax(320px, 1fr) auto;
-    grid-template-areas:
-        "hero about about"
-        "hero featured featured"
-        "digital digital projects";
-
-    gap: 18px;
+/* Homepage navigation */
+.home-page nav {
+    width: 100%;
+    margin: 0;
+    padding: 4px 10px;
+    justify-content: flex-end;
 }
 
+.home-page nav ul {
+    gap: 5px;
+}
+
+.home-page nav a {
+    padding: 2px 4px;
+
+    font-size: 12px;
+    font-weight: 400;
+}
+
+/* Homepage layout */
+.home-layout {
+    width: calc(100% - 100px);
+    height: calc(800px);
+    min-height: 0;
+    max-height: none;
+    margin: 5px auto 20px;
+    display: grid;
+    grid-template-columns: 1.08fr 0.95fr .8fr;
+    grid-template-rows: 1.8fr .9fr 1fr;
+    grid-template-areas:
+        "hero featured featured"
+        "about featured featured"
+        "about digital projects";
+    gap: 10px;
+}
+
+/* Homepage hero */
 .hero {
     width: min(850px, calc(100% - 30px));
-    margin: 50px auto;
+    margin: 1% auto;
     padding: 45px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.hero-left {
+    width: 100%;
+    align-self: stretch;
 
     display: flex;
-    gap: 45px;
+    flex-direction: column;
+    gap: 15px;
+
+    padding-left: 15px;
+    text-align: left;
 }
+
+.hero-left h2,
+.hero-left p {
+    margin: 0;
+}
+
 
 .home-layout .hero {
     grid-area: hero;
     width: auto;
+    min-width: 0;
     margin: 0;
-    padding: 28px;
+    padding: 22px;
     flex-direction: column;
-    gap: 20px;
-}
-
-
-.hero-left h1 {
-    margin-top: 0;
-    font-size: 36px;
-    line-height: 1;
-}
-
-.hero-left p {
-    font-size: 16px;
-    line-height: 1.3;
+    gap: 18px;
 }
 
 .hero-right img {
-    display: block;
-    width: 430px;
-    max-width: 100%;
-    border-radius: 10px;
-}
-
-.home-layout .hero-right {
-    width: 100%;
-}
-
-.home-layout .hero-right img {
-    width: 100%;
-    max-height: 320px;
-    object-fit: cover;
-}
-
-.hero-buttons {
     display: flex;
-    justify-content: center;
-    gap: 14px;
-
-    margin-top: 25px;
+    width: 930px;
+    overflow: hidden;
+    max-width: 100%;
+    border-radius: 5px;
 }
 
-.home-layout .hero-buttons {
-    flex-wrap: wrap;
-    margin-top: 18px;
-}
-
-.hero-buttons a {
-    width: fit-content;
-    min-width: 150px;
-    padding: 12px 18px;
-
-    text-align: center;
-}
-
-
-/* =========================
-   HOMEPAGE ABOUT SECTION
-========================= */
-
+/* Homepage about */
 .about {
     padding: 40px;
 }
 
 .home-layout .about {
     grid-area: about;
-
     width: auto;
+    height: auto;
+    min-width: 0;
     margin: 0;
-    padding: 25px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
 }
 
 .about h2 {
-    margin-top: 0;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    text-align: center;
 }
 
-.aboutrow {
-    display: flex;
-    gap: 15px;
+.aboutText {
+    width: min(600px, 100%);
+    margin: 0 auto;
+    text-align: left;
+    line-height: 1.4;
 }
 
-.about p,
-.videoarthero p,
-.project-text p {
-    line-height: 1.6;
-}
-
-.about .sub {
-    opacity: 0.7;
-}
-
-
-/* =========================
-   FEATURED PROJECT SLIDER
-========================= */
-
+/* Featured projects */
 .home-featured {
     grid-area: featured;
-
     min-width: 0;
-    padding: 25px;
+    min-height: 0;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+
     text-align: center;
     overflow: hidden;
 }
 
 .home-featured h2 {
+    flex-shrink: 0;
     margin-top: 0;
-    margin-bottom: 18px;
+    margin-bottom: 20px;
 }
 
+/* Fills the available featured section */
 .featured-slider {
-    display: grid;
-    grid-template-columns: auto minmax(0, 1fr) auto;
-    align-items: center;
-    gap: 15px;
+    flex: 1;
+    min-height: 0;
 }
 
+/* Image above, controls/text below */
 .featured-project {
+    width: 100%;
+    height: 100%;
     min-width: 0;
+    min-height: 0;
 
     display: grid;
-    grid-template-columns: minmax(180px, 0.9fr) minmax(220px, 1fr);
-    align-items: center;
-    gap: 20px;
+    grid-template-rows: minmax(0, 1fr) auto;
+    gap: 18px;
 
     opacity: 1;
     transition: opacity 0.2s ease;
@@ -301,35 +304,46 @@ nav a:active {
     opacity: 0;
 }
 
+/* Large top image */
 .featured-project img {
     display: block;
     width: 100%;
-    max-height: 210px;
-    aspect-ratio: 16 / 9;
+    height: 100%;
+    min-height: 0;
 
     object-fit: cover;
     border-radius: 8px;
 }
 
+/* Arrows now align with the text */
+.featured-info-row {
+    display: grid;
+    grid-template-columns: 45px minmax(0, 1fr) 45px;
+    align-items: center;
+    gap: 20px;
+}
+
 .featured-project-text {
     min-width: 0;
-    text-align: left;
+    text-align: center;
 }
 
 .featured-project-text h3 {
-    margin-top: 0;
-    margin-bottom: 10px;
+    margin: 0 0 8px;
     font-size: 22px;
 }
 
 .featured-project-text p {
+    width: min(550px, 100%);
+    margin: 0 auto;
     line-height: 1.5;
 }
 
 .featured-project-text .viewMore {
-    margin-top: 10px;
+    margin-top: 12px;
 }
 
+/* Slider buttons */
 .slider-button {
     width: 45px;
     height: 45px;
@@ -364,6 +378,7 @@ nav a:active {
     border-bottom: 4px solid #ffffff;
 }
 
+/* Slider dots */
 .slider-dots {
     display: flex;
     justify-content: center;
@@ -388,32 +403,34 @@ nav a:active {
     background-color: #8a8eb9;
 }
 
-
-/* =========================
-   HOMEPAGE LANDING LINKS
-========================= */
-
+/* Homepage links */
 .home-link {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
     min-width: 0;
-    padding: 24px;
+    padding: 22px;
 
     color: #000000;
     text-decoration: none;
 }
 
 .home-link h2 {
-    margin-top: 0;
-    margin-bottom: 8px;
+    margin: 0 0 8px;
+    font-size: 21px;
 }
 
 .home-link p {
-    line-height: 1.5;
+    margin: 0 0 10px;
+
+    font-size: 13px;
+    line-height: 1.4;
 }
 
 .home-link span {
     display: inline-block;
-    margin-top: 8px;
+    margin-top: auto;
     font-weight: 700;
 }
 
@@ -438,11 +455,7 @@ nav a:active {
     grid-area: projects;
 }
 
-
-/* =========================
-   DIGITAL ART LANDING PAGE
-========================= */
-
+/* Landing page */
 .landingHero {
     padding: 40px;
     text-align: center;
@@ -500,11 +513,7 @@ nav a:active {
     margin-top: 25px;
 }
 
-
-/* =========================
-   PREVIOUS PAGE BUTTON
-========================= */
-
+/* Previous page button */
 .previousPage {
     width: min(900px, calc(100% - 30px));
     margin: 15px auto;
@@ -514,11 +523,7 @@ nav a:active {
     font-size: 14px;
 }
 
-
-/* =========================
-   PROJECT PAGES
-========================= */
-
+/* Project pages */
 .videoarthero {
     padding: 40px;
     text-align: center;
@@ -556,11 +561,7 @@ nav a:active {
     color: #333333;
 }
 
-
-/* =========================
-   PROJECT VIDEOS
-========================= */
-
+/* Project videos */
 .video {
     width: min(750px, 100%);
     margin: 0 auto;
@@ -587,11 +588,7 @@ nav a:active {
     object-fit: contain;
 }
 
-
-/* =========================
-   PROJECT IMAGES
-========================= */
-
+/* Project images */
 .images {
     display: flex;
     justify-content: center;
@@ -605,11 +602,7 @@ nav a:active {
     border-radius: 10px;
 }
 
-
-/* =========================
-   FOOTER
-========================= */
-
+/* Footer */
 footer {
     margin-top: 30px;
     padding: 14px;
@@ -617,4 +610,8 @@ footer {
     color: #2a1331;
     font-size: 14px;
     text-align: center;
+}
+
+.home-page footer {
+    margin-top: 0;
 }

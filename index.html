@@ -3,13 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title>Portfolio - Dyllan Evans</title>
-
     <link rel="stylesheet" href="styles.css" />
   </head>
-
-  <body>
+  <body class="home-page">
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -17,126 +14,96 @@
         <li><a href="projects-landing.html">Projects</a></li>
       </ul>
     </nav>
-
     <main class="home-layout">
       <section class="hero">
         <div class="hero-right">
-          <img
-            class="hero-image"
-            src="img/Photoredo.png"
-            alt="Dyllan Evans"
-          />
+          <img class="hero-image" src="img/Photoredo.png" alt="Dyllan Evans" />
         </div>
         <div class="hero-left">
-          <h1>Dyllan Evans</h1>
-
-          <h3>Digital Artist &amp; Frontend Developer</h3>
-
-          <p>
-            I create 2D, 3D, and interactive work focused on visual storytelling
-            and experimentation with digital spaces, along with a specialty in
-            frontend development.
-          </p>
+          <h2>Dyllan Evans</h2>
+          <p>Digital Artist &amp; Frontend Developer</p>
+          <p>Welcome to my Portfolio!</p>
         </div>
       </section>
-
       <section id="about" class="about">
-        <h2>About Me</h2>
-
-        <div class="aboutrow">
+        <h2>About My Work</h2>
+        <div class="aboutText">
           <p>
-            Hi! I’m Dyllan Evans, and I make digital art and interactive
-            websites focused on my own nostalgic style. This page is currently
-            a work in progress, but you can check out the projects I’ve worked
-            on throughout my college career.
-          </p>
-
-          <p class="sub">
-            I focus on 2D, 3D, and moving video. I also have experience with
-            interactive web-based work using Three.js and other web
-            technologies. My work focuses on visual storytelling and
-            experimentation with digital spaces, often drawing from nostalgia
-            and personal experiences.
+            Throughout my time at Indiana Universtiy, I developed a strong
+            foundation in digital art and frontend development. I have worked
+            along side professors and classmates to create full data systems to
+            interactive digital art. My work focuses on visual storytelling,
+            experimentation with digital spaces, and a specialty in frontend Web
+            Design and System Development with design in focus. I have a strong
+            interest in creating interactive experiences that are both visually
+            engaging and user-friendly. My goal is to continue to push the
+            boundaries of digital art and web development, creating innovative
+            projects that inspire and engage with users.
           </p>
         </div>
       </section>
-
       <section id="featured" class="home-featured">
         <h2>Featured Projects</h2>
-
         <div class="featured-slider">
-          <button
-            class="slider-button previous-project"
-            type="button"
-            aria-label="Previous featured project"
-          >
-            &larr;
-          </button>
-
           <article class="featured-project">
-            <img
-              id="featured-image"
-              src="img/stillfromproject1.jpg"
-              alt="Line Notes"
-            />
+            <img id="featured-image" src="linenotes.png" alt="Line Notes" />
 
-            <div class="featured-project-text">
-              <h3 id="featured-title">Line Notes</h3>
-
-              <p id="featured-description">
-              </p>
-
-              <a
-                id="featured-link"
-                class="viewMore"
-                href="line-notes.html"
+            <div class="featured-info-row">
+              <button
+                class="slider-button previous-project"
+                type="button"
+                aria-label="Previous project"
               >
-                View Project
-              </a>
+                &larr;
+              </button>
+
+              <div class="featured-project-text">
+                <h3 id="featured-title">Line Notes</h3>
+
+                <p id="featured-description">
+                  An interactive web project that visualized ancestry through
+                  technology using Three.js, WebGL, and frontend development.
+                </p>
+
+                <a id="featured-link" class="viewMore" href="line-notes.html">
+                  View Project
+                </a>
+              </div>
+
+              <button
+                class="slider-button next-project"
+                type="button"
+                aria-label="Next project"
+              >
+                &rarr;
+              </button>
             </div>
           </article>
-
-          <button
-            class="slider-button next-project"
-            type="button"
-          >
-            &rarr;
-          </button>
         </div>
-
-        <div
-          class="slider-dots"
-
-        ></div>
+        <div class="slider-dots"></div>
       </section>
-
       <a class="home-link digital-link" href="digital-landing.html">
         <h2>Digital Art</h2>
-
         <p>
           Explore my video art, 2D and 3D work, animation, and experimental
           digital media.
         </p>
-
         <span>Explore Digital Art &rarr;</span>
       </a>
-
       <a class="home-link projects-link" href="projects-landing.html">
         <h2>Projects</h2>
-
         <p>
           Explore my websites, frontend development, Three.js work, and
           interactive experiences.
         </p>
-
         <span>Explore Projects &rarr;</span>
       </a>
+      
     </main>
-
     <footer>
       <p>Made by Dyllan Evans</p>
     </footer>
-
+    <!-- <div class="crt-overlay"></div> -->
     <script src="homepage.js"></script>
   </body>
 </html>
