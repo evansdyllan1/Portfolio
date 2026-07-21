@@ -3,81 +3,140 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
+
+    <title>Portfolio - Dyllan Evans</title>
+
     <link rel="stylesheet" href="styles.css" />
   </head>
+
   <body>
     <nav>
-      <h2>Dyllan Evans</h2>
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="videoart.html">Video</a></li>
-        <li><a href="3d.html">3D</a></li>
-        <li><a href="interactive.html">Interactive</a></li>
+        <li><a href="digital-landing.html">Digital Art</a></li>
+        <li><a href="projects-landing.html">Projects</a></li>
       </ul>
     </nav>
-    <div>
+
+    <main class="home-layout">
       <section class="hero">
+        <div class="hero-right">
+          <img
+            class="hero-image"
+            src="img/Photoredo.png"
+            alt="Dyllan Evans"
+          />
+        </div>
         <div class="hero-left">
           <h1>Dyllan Evans</h1>
-          <h3>Digital Artist & Frontend Developer</h3>
+
+          <h3>Digital Artist &amp; Frontend Developer</h3>
+
           <p>
             I create 2D, 3D, and interactive work focused on visual storytelling
-            and experimentation with digital spaces along with a speciality in Front-end development
+            and experimentation with digital spaces, along with a specialty in
+            frontend development.
           </p>
         </div>
-
-        <div class="hero-right">
-          <img src="img/Dyllan.JPG" alt="Dyllan" />
-          <div class="hero-buttons">
-            <a href="videoart.html">View Video Work</a>
-            <a href="#about">About Me</a>
-          </div>
-        </div>
       </section>
+
       <section id="about" class="about">
         <h2>About Me</h2>
+
         <div class="aboutrow">
           <p>
-            Hi! I'm Dyllan Evans and I make digital art and interactive websites
-            focused on my own nostigic style. This page is currently a work in
-            process, but you can check out the projects that Ive worked on through
-            my college career!
+            Hi! I’m Dyllan Evans, and I make digital art and interactive
+            websites focused on my own nostalgic style. This page is currently
+            a work in progress, but you can check out the projects I’ve worked
+            on throughout my college career.
           </p>
 
           <p class="sub">
-            I focus in 2D, 3D, and moving video. I also have experience with
-            interactive web-based work using Three.js and other web technologies.
-            My work is focused on visual storytelling and experimentation with
-            digital spaces, often drawing from my own nostalgia and personal
-            experiences.
+            I focus on 2D, 3D, and moving video. I also have experience with
+            interactive web-based work using Three.js and other web
+            technologies. My work focuses on visual storytelling and
+            experimentation with digital spaces, often drawing from nostalgia
+            and personal experiences.
           </p>
         </div>
       </section>
-      <section class="skills">
-        <div class="skill-block">
-          <h3>2D</h3>
-          <p>Illustration, Video, Graphic design</p>
+
+      <section id="featured" class="home-featured">
+        <h2>Featured Projects</h2>
+
+        <div class="featured-slider">
+          <button
+            class="slider-button previous-project"
+            type="button"
+            aria-label="Previous featured project"
+          >
+            &larr;
+          </button>
+
+          <article class="featured-project">
+            <img
+              id="featured-image"
+              src="img/stillfromproject1.jpg"
+              alt="Line Notes"
+            />
+
+            <div class="featured-project-text">
+              <h3 id="featured-title">Line Notes</h3>
+
+              <p id="featured-description">
+              </p>
+
+              <a
+                id="featured-link"
+                class="viewMore"
+                href="line-notes.html"
+              >
+                View Project
+              </a>
+            </div>
+          </article>
+
+          <button
+            class="slider-button next-project"
+            type="button"
+          >
+            &rarr;
+          </button>
         </div>
 
-        <div class="skill-block">
-          <h3>3D</h3>
-          <p>Modeling, rendering, environments</p>
-        </div>
+        <div
+          class="slider-dots"
 
-        <div class="skill-block">
-          <h3>Interactive</h3>
-          <p>Three.js, React, web-based experiences</p>
-        </div>
-
-        <div class="skill-block">
-          <h3>Front-end Development</h3>
-          <p>HTML, CSS, JS, PHP</p>
-        </div>
+        ></div>
       </section>
-    </div>
+
+      <a class="home-link digital-link" href="digital-landing.html">
+        <h2>Digital Art</h2>
+
+        <p>
+          Explore my video art, 2D and 3D work, animation, and experimental
+          digital media.
+        </p>
+
+        <span>Explore Digital Art &rarr;</span>
+      </a>
+
+      <a class="home-link projects-link" href="projects-landing.html">
+        <h2>Projects</h2>
+
+        <p>
+          Explore my websites, frontend development, Three.js work, and
+          interactive experiences.
+        </p>
+
+        <span>Explore Projects &rarr;</span>
+      </a>
+    </main>
+
     <footer>
       <p>Made by Dyllan Evans</p>
     </footer>
+
+    <script src="homepage.js"></script>
   </body>
 </html>
