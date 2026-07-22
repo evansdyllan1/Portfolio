@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio - Dyllan Evans</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Noto+Sans+Mono:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body class="home-page">
     <nav>
@@ -19,16 +25,54 @@
         <div class="hero-right">
           <img class="hero-image" src="img/Photoredo.png" alt="Dyllan Evans" />
         </div>
-        <div class="hero-left">
-          <h2>Dyllan Evans</h2>
-          <p>Digital Artist &amp; Frontend Developer</p>
-          <p>Welcome to my Portfolio!</p>
+        <div class="hero-left typewriter-container">
+          <h2 id="typewriter-text"></h2>
+          <!-- Hi! I'm Dyllan Evans -->
+          <p id="typewriter-description"></p>
+          <!-- Digital Artist & Frontend Developer-->
+          <p>she/her</p>
+          <div class="contact" id="contact-icons">
+            <a href="mailto:evansdyllan1@gmail.com">
+              <img class="email-icon" src="img/message.svg" alt="Email Icon" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/dyllan-evans-1b0b4a1b3/"
+              target="_blank"
+            >
+              <img
+                class="linkedin-icon"
+                src="img/linkedin-in.svg"
+                alt="LinkedIn Icon"
+              />
+            </a>
+            <a href="https://github.com/dyllan-evans" target="_blank">
+              <img class="github-icon" src="img/github.svg" alt="GitHub Icon" />
+            </a>
+            <a href="resume.pdf" target="_blank"
+              ><img
+                class="resume-icon"
+                src="img/file-text.svg"
+                alt="Resume Icon"
+            /></a>
+          </div>
         </div>
       </section>
       <section id="about" class="about">
         <h2>About My Work</h2>
         <div class="aboutText">
           <p>
+            Throughout my time at Indiana Universtiy, I developed a strong
+            foundation in digital art and frontend development. I have worked
+            along side professors and classmates to create full data systems to
+            interactive digital art. My work focuses on visual storytelling,
+            experimentation with digital spaces, and a specialty in frontend Web
+            Design and System Development with design in focus. I have a strong
+            interest in creating interactive experiences that are both visually
+            engaging and user-friendly. My goal is to continue to push the
+            boundaries of digital art and web development, creating innovative
+            projects that inspire and engage with users.
+          </p>
+                    <p>
             Throughout my time at Indiana Universtiy, I developed a strong
             foundation in digital art and frontend development. I have worked
             along side professors and classmates to create full data systems to
@@ -82,6 +126,37 @@
         </div>
         <div class="slider-dots"></div>
       </section>
+      <section class="skills" aria-labelledby="skills-heading">
+        <h2 id="skills-heading">Skills</h2>
+
+        <div class="skills-columns">
+          <div class="skill-group">
+            <h3>Technical</h3>
+
+            <ul class="skill-list" id="skills-list">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+              <li>Three.js</li>
+              <li>Theatre.js</li>
+              <li>WebGL</li>
+              <li>Git</li>
+            </ul>
+          </div>
+
+          <div class="skill-group">
+            <h3>Art</h3>
+
+            <ul class="skill-list" id="skills-list">
+              <li>3D Modeling</li>
+              <li>Animation</li>
+              <li>Video Art</li>
+              <li>Digital Illustration</li>
+              <li>Visual Storytelling</li>
+            </ul>
+          </div>
+        </div>
+      </section>
       <a class="home-link digital-link" href="digital-landing.html">
         <h2>Digital Art</h2>
         <p>
@@ -98,7 +173,6 @@
         </p>
         <span>Explore Projects &rarr;</span>
       </a>
-      
     </main>
     <footer>
       <p>Made by Dyllan Evans</p>
