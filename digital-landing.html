@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
 
-  <body>
+  <body class="threeD">
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -16,21 +16,24 @@
       </ul>
     </nav>
     <div class="landingHero">
-      <h2>Introduction to Digital Art</h2>
-      <h3>
-        Here is where I am going to put a description that puts my art into a
-        cohesive paragraph that explains what I do. This is going to combine 2D,
-        3D, interactive, and video art into three different sections while
-        showing two projects from each category. Visitors can then click the
-        link to the project page for a complete description of each project.
-      </h3>
+      <div>
+        <img class="iconHero" src="img/Heartguy.png" alt="icon" />
+      </div>
+      <div>
+        <h1>Digital Art</h1>
+        <p>Explore 3 different categories spotlights</p>
+        <p>Click view more to view entire collection</p>
+      </div>
+      <div>
+        <img class="iconHero" src="img/Heartguy.png" alt="icon" />
+      </div>
     </div>
     <main class="columns">
       <section class="category">
         <h1>Video Art</h1>
         <div class="row">
-          <a href="videoart.html">
-            <div class="smallProject">
+          <a class="smallProject" href="videoart.html#warehouse">
+            <div>
               <h2>The Warehouse</h2>
               <p>A sound in the warehouse spooks</p>
               <img
@@ -40,14 +43,16 @@
               />
             </div>
           </a>
-          <div class="smallProject">
-            <h2>You Are the Player</h2>
-            <img
-              class="smallimg"
-              src="img/stillfromproject4.jpg"
-              alt="Still from You Are the Player"
-            />
-          </div>
+          <a class="smallProject" href="videoart.html">
+            <div>
+              <h2>You Are the Player</h2>
+              <img
+                class="smallimg"
+                src="img/stillfromproject4.jpg"
+                alt="Still from You Are the Player"
+              />
+            </div>
+          </a>
         </div>
         <a class="viewMore" href="videoart.html">View More</a>
       </section>

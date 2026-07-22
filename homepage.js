@@ -109,6 +109,23 @@ function createDots() {
   });
 }
 
+function handleTouchStart(event) {
+  touchStartX = event.touches[0].clientX;
+}
+
+function handleTouchMove(event) {
+  touchEndX = event.touches[0].clientX;
+}
+
+function handleTouchEnd() {
+  handleSwipe();
+}
+
+featuredCard.addEventListener("touchstart", handleTouchStart);
+featuredCard.addEventListener("touchmove", handleTouchMove);
+featuredCard.addEventListener("touchend", handleTouchEnd);
+
+
 function updateDots() {
   const dots = document.querySelectorAll(".slider-dot");
 
