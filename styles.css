@@ -11,7 +11,7 @@ body {
     padding: 5px;
     font-family: monospace;
     color: #0c0e13;
-    background-color: #e0e5f1;
+    background-color: #d9dce3;
 }
 
 /* Colors */
@@ -70,8 +70,7 @@ body {
 .hero-buttons a,
 .viewMore,
 .project a,
-.smallProject a
-{
+.smallProject a {
     display: inline-block;
     padding: 10px 18px;
     font-family: inherit;
@@ -107,8 +106,20 @@ body {
     border-bottom: 4px solid var(--background-color);
 }
 
+
+.taskbar {
+    height: 32px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 4px;
+    z-index: 200;
+    justify-content: flex-end;
+}
+
 /* Navigation */
 nav {
+    z-index: 1000;
     width: 100%;
     margin: 0;
     padding: 4px 10px;
@@ -117,18 +128,12 @@ nav {
     align-items: center;
 }
 
-nav h2 {
-    margin: 0;
-    font-size: 22px;
-    font-weight: 700;
-}
-
 nav ul {
-    margin: 0;
+    margin: auto 10px;
     padding: 0;
-
+    justify-content: center;
     display: flex;
-    gap: 5px;
+    gap: 10px;
 }
 
 nav li {
@@ -136,13 +141,25 @@ nav li {
 }
 
 nav a {
-    color: #000000;
     text-decoration: none;
-    border: 2px solid transparent;
-    cursor: pointer;
-    padding: 2px 4px;
+    justify-content: center;
+    padding: 5px 14px;
     font-size: 12px;
-    font-weight: 400;
+    height: 30px;
+    background-color: var(--active-color);
+    border-radius: 5px;
+    border-top: 4px solid #ffffff;
+    border-left: 4px solid #ffffff;
+    border-right: 4px solid var(--border-color);
+    border-bottom: 4px solid var(--border-color);
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-color);
+
 }
 
 
@@ -153,16 +170,20 @@ nav a:hover {
 
 nav a:active {
     background-color: #d8deec;
+    border-top: 4px solid var(--border-color);
+    border-left: 4px solid var(--border-color);
+    border-right: 4px solid var(--background-color);
+    border-bottom: 4px solid var(--background-color);
 }
 
 /* Previous page button */
 .previousPage {
     display: block;
-    
+
 }
 
 .backButton {
-        display: inline-block;
+    display: inline-block;
     padding: 10px 18px;
     font-family: inherit;
     font-weight: 700;
@@ -170,24 +191,42 @@ nav a:active {
     color: var(--text-color);
     background-color: var(--background-color);
     border-radius: 5px;
-    border-top: 4px solid #ffffff;
-    border-left: 4px solid #ffffff;
-    border-right: 4px solid var(--border-color);
-    border-bottom: 4px solid var(--border-color);
+    border-top: 3px solid #ffffff;
+    border-left: 3px solid #ffffff;
+    border-right: 3px solid var(--border-color);
+    border-bottom: 3px solid var(--border-color);
     cursor: pointer;
 }
 
 /* Homepage layout */
 .home-layout {
-    width: calc(100% - 100px);
+    width: calc(100% - 80px);
     height: auto;
-    min-height: 1080px;
-    margin: 5px auto 20px;
-
+    min-height: 1000px;
+    margin: 20px auto 20px;
     display: grid;
     grid-template-rows:
-        minmax(420px, 2fr) minmax(210px, 0.9fr) auto minmax(210px, .3fr);
-
+        /* Row 1: hero + featured */
+        minmax(120px, 2fr)
+        /* Row 2: about + featured */
+        minmax(210px, 0.9fr)
+        /* Row 3: about + skills */
+        auto
+        /* Row 4: about + digital + projects */
+        minmax(210px, 0.3fr);
+    /*
+     * Visual layout:
+     *
+     * ┌─────────┬──────────┬──────────┐
+     * │  hero   │ featured │ featured │
+     * |         |                     |
+     * │         │ featured │ featured │
+     * │---------├─────────────────────┤
+     * │ about   │ skills   │ skills   │
+     * │         ├──────────┼──────────┤
+     * │         │ digital  │ projects │
+     * └─────────┴──────────┴──────────┘
+     */
     grid-template-areas:
         "hero  featured featured"
         "about featured featured"
@@ -252,6 +291,7 @@ nav a:active {
     width: 930px;
     overflow: hidden;
     max-width: 100%;
+        filter: drop-shadow(7px 7px 0 #c7c7cb);
     border-radius: 5px;
 }
 
@@ -433,10 +473,11 @@ nav a:active {
     display: flex;
     margin: 0 auto;
     width: 700px;
-    height: 100%;
+    height: 450px;
     min-height: 0;
-    object-fit: contain;
+    object-fit: cover;
     border-radius: 5px;
+        filter: drop-shadow(7px 7px 0 #c7c7cb);
 }
 
 /* Arrows now align with the text */
@@ -478,10 +519,10 @@ nav a:active {
     background-color: #8a8eb9;
     border-radius: 5px;
 
-    border-top: 4px solid #ffffff;
-    border-left: 4px solid #ffffff;
-    border-right: 4px solid #636474;
-    border-bottom: 4px solid #6d6e7f;
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-right: 2px solid #636474;
+    border-bottom: 2px solid #6d6e7f;
     cursor: pointer;
 }
 
@@ -493,10 +534,10 @@ nav a:active {
     background-color: var(--active-color);
     transform: translate(2px, 2px);
 
-    border-top: 4px solid #636474;
-    border-left: 4px solid #6d6e7f;
-    border-right: 4px solid #ffffff;
-    border-bottom: 4px solid #ffffff;
+    border-top: 2px solid #636474;
+    border-left: 2px solid #6d6e7f;
+    border-right: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
 }
 
 /* Slider dots */
@@ -585,12 +626,14 @@ nav a:active {
     flex-direction: row;
     justify-content: space-around;
 }
+
 .iconHero {
     width: 300px;
     height: 170px;
-      filter: drop-shadow(7px 7px 0 #c7c7cb);
+    filter: drop-shadow(7px 7px 0 #c7c7cb);
 
 }
+
 .columns {
     display: flex;
     flex-direction: column;
@@ -659,30 +702,33 @@ nav a:active {
 .smallimg {
     display: block;
     width: 100%;
-
+    height: 250px;
+    margin-top: 20px;
     object-fit: cover;
     border-radius: 6px;
 }
 
 .viewMore {
-    margin-top: 25px;
+    margin-top: 15px;
 }
 
 /* Project pages */
 .videoarthero {
-    padding: 40px;
+    padding: 30px;
     text-align: center;
+    width: 1000px;
 }
 
 .assignments {
-    width: 1200px;
-    display: grid;
-    grid-template-columns: 50% 50%;
+    width: 1000px;
+    display: flex;
+    flex-direction: column;
     gap: 25px;
     justify-content: center;
 }
 
 .project {
+    gap: 40px;
     padding: 25px;
     text-align: center;
     scroll-margin-top: 30px;
@@ -762,4 +808,37 @@ footer {
 
 .home-page footer {
     margin-top: 0;
+}
+
+@media (max-width: 880px) {
+    .home-layout {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .landingHero {
+        flex-direction: column;
+    }
+
+    .featured-project {
+        width: 100%;
+        height: 400px;
+        justify-content: center;
+    }
+
+    .featured-project img {
+        display: flex;
+        margin: 0 auto;
+        width: 350px;
+        height: 100%;
+        min-height: 0;
+        object-fit: contain;
+        border-radius: 5px;
+    }
+
+
+    nav {
+        justify-content: center;
+    }
+
 }

@@ -56,22 +56,23 @@ const featuredProjects = [
     title: "Line Notes",
     description:
       "An interactive web project that visualized ancestory through technology using Three.js, WebGL, and Frontend development.",
-    image: "img/linenotes.png",
+    image: "img/linenotesbread.png",
     alt: "Line Notes project preview",
     link: "linenotes.html",
   },
   {
     title: "The Art Market",
-    description: "Capstone Project 2025-2026",
-    image: "img/stillfromproject4.jpg",
-    alt: "Still from You Are the Player",
+    description:
+      "Capstone Project 2026, Planned and built a full stack web system with the simple idea of growth.",
+    image: "img/artmarket.png",
+    alt: "The Art Market",
     link: "videoart.html",
   },
   {
-    title: "",
+    title: "The Warehouse",
     description:
-      "An interactive Three.js portfolio featuring 3D models, video work, music, and an explorable digital island.",
-    image: "img/stillfromproject3.jpg",
+      "A short video clip using foley and different sounds to describe a horror in the Warehouse.",
+    image: "img/WarehouseStill.png",
     alt: "Preview of the 3D Portfolio project",
     link: "interactive.html",
   },
@@ -124,7 +125,6 @@ function handleTouchEnd() {
 featuredCard.addEventListener("touchstart", handleTouchStart);
 featuredCard.addEventListener("touchmove", handleTouchMove);
 featuredCard.addEventListener("touchend", handleTouchEnd);
-
 
 function updateDots() {
   const dots = document.querySelectorAll(".slider-dot");
