@@ -291,7 +291,7 @@ nav a:active {
     width: 930px;
     overflow: hidden;
     max-width: 100%;
-        filter: drop-shadow(7px 7px 0 #c7c7cb);
+    filter: drop-shadow(7px 7px 0 #c7c7cb);
     border-radius: 5px;
 }
 
@@ -336,6 +336,7 @@ nav a:active {
     padding: 15px;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
 
 .about h2 {
@@ -356,36 +357,36 @@ nav a:active {
 .skills {
     grid-area: skills;
     min-width: 0;
-    min-height: 120px;
-    padding: 16px 22px;
+    min-height: 100px;
+    padding: 12px 22px;
 }
 
 .skills h2 {
-    margin: 0 0 12px;
+    margin: 0 0 10px;
     text-align: center;
     font-family: "DM Mono", monospace;
-    font-size: 20px;
+    font-size: 24px;
 }
 
 .skills-columns {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 24px;
+    gap: 12px;
 }
 
 .skill-group {
     min-width: 0;
 }
 
-.skill-group+.skill-group {
-    padding-left: 24px;
+.skill-group + .skill-group {
+    padding-left: 12px;
     border-left: 2px solid #c7cadb;
 }
 
 .skill-group h3 {
     margin: 0 0 8px;
     font-family: "DM Mono", monospace;
-    font-size: 15px;
+    font-size: 20px;
     text-align: center;
 }
 
@@ -393,7 +394,7 @@ nav a:active {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 7px;
+    gap: 10px;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -402,16 +403,16 @@ nav a:active {
 .skill-list li {
     padding: 5px 8px;
     font-family: "DM Mono", monospace;
-    font-size: 11px;
+    font-size: 12px;
     white-space: nowrap;
     background-color: #d8deec;
     border-radius: 4px;
     transition: transform 0.2s ease;
 
-    border-top: 2px solid #ffffff;
-    border-left: 2px solid #ffffff;
-    border-right: 2px solid #9fa1bb;
-    border-bottom: 2px solid #9fa1bb;
+    border-top: 3px solid #ffffff;
+    border-left: 3px solid #ffffff;
+    border-right: 3px solid #9fa1bb;
+    border-bottom: 3px solid #9fa1bb;
 
     cursor: default;
 }
@@ -454,7 +455,7 @@ nav a:active {
 
 .featured-project {
     width: 100%;
-    height: 100%;
+    height: min-content;
     min-width: 0;
     min-height: 0;
     display: grid;
@@ -477,7 +478,7 @@ nav a:active {
     min-height: 0;
     object-fit: cover;
     border-radius: 5px;
-        filter: drop-shadow(7px 7px 0 #c7c7cb);
+    filter: drop-shadow(7px 7px 0 #c7c7cb);
 }
 
 /* Arrows now align with the text */
@@ -714,7 +715,8 @@ nav a:active {
 
 /* Project pages */
 .videoarthero {
-    padding: 31px;
+    width: 1250px;
+    padding: 25px;
     text-align: center;
     margin: 10px auto;
     display: flex;
@@ -723,22 +725,22 @@ nav a:active {
 }
 
 .assignments {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
+    width: 1250px;
+    display: grid;
+    margin: 0 auto;
+    grid-template-columns: 50% 50%;
+    gap: 15px;
     justify-content: center;
 }
 
 .project {
-    gap: 40px;
     padding: 25px;
     text-align: center;
     scroll-margin-top: 30px;
 }
 
 .project-text {
-    width: min(750px, 100%);
+    width: min(950px, 100%);
     margin: 0 auto;
     text-align: left;
 }
@@ -760,7 +762,7 @@ nav a:active {
 
 /* Project videos */
 .video {
-    width: min(750px, 100%);
+    width: min(950px, 100%);
     margin: 0 auto;
 
     border-radius: 10px;
@@ -814,7 +816,7 @@ footer {
 }
 
 /* Tablet */
-@media (max-width: 1100px) {
+@media (max-width: 900px) {
     .home-layout {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         grid-template-rows: auto;
@@ -828,7 +830,30 @@ footer {
     .featured-project {
         height: auto;
     }
+
+    .videoarthero {
+        width: 100%;
+    }
+    .assignments {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .project-text {
+        font-size: 14px;
+    }
+    .Description {
+        font-size: 12px;
+    }
+
+    .project-text h2 {
+        font-size: 19px;
+        padding: 0;
+    }
+
 }
+
 /* phone */
 @media (max-width: 700px) {
     body {
@@ -873,7 +898,7 @@ footer {
 
     .featured-project img {
         width: 100%;
-        aspect-ratio: 16 / 10;
+        height: min-content;
     }
 
     .featured-info-row {
@@ -892,9 +917,15 @@ footer {
         gap: 20px;
     }
 
-    .skill-group .skill-group {
+    .skill-group + .skill-group {
         padding-left: 0;
         padding-top: 18px;
+        border-left: none;
+        border-top: 2px solid #9fa1bb;
+    }
+
+    .skill-list li {
+      font-size: 11px;  
     }
 
     .iconHero {
@@ -926,6 +957,7 @@ footer {
     .row {
         grid-template-columns: 1fr;
     }
+
 }
 
 @media (max-width: 430px) {
