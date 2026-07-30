@@ -79,10 +79,10 @@ body {
     color: #ffffff;
     background-color: var(--primary-color);
     border-radius: 5px;
-    border-top: 4px solid #ffffff;
-    border-left: 4px solid #ffffff;
-    border-right: 4px solid var(--border-color);
-    border-bottom: 4px solid var(--border-color);
+    border-top: 3px solid #ffffff;
+    border-left: 3px solid #ffffff;
+    border-right: 3px solid var(--border-color);
+    border-bottom: 3px solid var(--border-color);
     cursor: pointer;
 }
 
@@ -97,13 +97,14 @@ body {
 .hero-buttons a:active,
 .viewMore:active,
 .smallProject a:active,
-.project a:active {
+.project a:active,
+.skill-list li:active {
     background-color: var(--active-color);
     transform: translate(2px, 2px);
-    border-top: 4px solid var(--border-color);
-    border-left: 4px solid var(--border-color);
-    border-right: 4px solid var(--background-color);
-    border-bottom: 4px solid var(--background-color);
+    border-top: 3px solid var(--border-color);
+    border-left: 3px solid var(--border-color);
+    border-right: 3px solid #ffffff;
+    border-bottom: 3px solid #ffffff;
 }
 
 
@@ -378,7 +379,7 @@ nav a:active {
     min-width: 0;
 }
 
-.skill-group + .skill-group {
+.skill-group+.skill-group {
     padding-left: 12px;
     border-left: 2px solid #c7cadb;
 }
@@ -796,9 +797,48 @@ nav a:active {
 }
 
 .project img {
+    filter: drop-shadow(7px 7px 0 #c7c7cb);
     display: block;
     width: min(370px, 100%);
     border-radius: 10px;
+}
+
+/* line notes page */
+.lineNotes {
+    margin-top: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: var(--background-color);
+    border-radius: 10px;
+    
+    border-top: 5px solid #ffffff;
+    border-left: 5px solid #ffffff;
+    border-right: 5px solid var(--border-color);
+    border-bottom: 5px solid var(--border-color);
+}
+
+.lineHero {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: space-around;
+        margin: auto 0;
+}
+
+.lineHeroText {
+    display: flex;
+    flex-direction: column;
+    margin: auto 0;
+}
+.bread {
+    margin-top: 40px;
+}
+
+.bread img {
+    filter: drop-shadow(7px 7px 0 #c7c7cb);
+    width: 400px;
+    border-radius: 5px;
+    height: auto;
 }
 
 /* Footer */
@@ -834,6 +874,7 @@ footer {
     .videoarthero {
         width: 100%;
     }
+
     .assignments {
         display: flex;
         flex-direction: column;
@@ -843,6 +884,7 @@ footer {
     .project-text {
         font-size: 14px;
     }
+
     .Description {
         font-size: 12px;
     }
@@ -917,7 +959,7 @@ footer {
         gap: 20px;
     }
 
-    .skill-group + .skill-group {
+    .skill-group+.skill-group {
         padding-left: 0;
         padding-top: 18px;
         border-left: none;
@@ -925,7 +967,7 @@ footer {
     }
 
     .skill-list li {
-      font-size: 11px;  
+        font-size: 11px;
     }
 
     .iconHero {
