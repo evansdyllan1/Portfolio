@@ -416,6 +416,9 @@ nav a:active {
     border-bottom: 3px solid #9fa1bb;
 
     cursor: default;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
 }
 
 .skill-list li:hover {
