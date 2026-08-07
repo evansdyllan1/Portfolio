@@ -940,7 +940,10 @@ footer {
 
     .featured-project img {
         width: 100%;
-        height: min-content;
+        height: auto;
+        aspect-ratio: 14 / 9;
+        object-fit: cover;
+        object-position: center;
     }
 
     .featured-info-row {
