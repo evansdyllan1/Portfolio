@@ -11,30 +11,21 @@ body {
     padding: 5px;
     font-family: monospace;
     color: #0c0e13;
-    background-color: #d9dce3;
+    background-color: #b9c0b5;
 }
 
 /* Colors */
 :root {
-    --primary-color: #8a8eb9;
-    --secondary-color: #9ca0cc;
-    --background-color: #f0f0f0;
-    --border-color: #9fa1bb;
-    --text-color: #070709;
-    --hover-color: #dbdce8;
-    --active-color: #d8deec;
-}
+    --background-color: #eef1ea; /* BACKGROUND FOR COLUMNS */
+    --button-color: #ece6d8; /* YELLOW BUTTON COLOR FOR BUTTONS */
+    --buttonborder-color: #b7b49c; /* BORDER COLOR FOR BUTTONS */
+    --border-color: #a2b3a2; /* PERM BORDER ON THINGS NOT CLICKABLE*/
+    --text-color: #080907; /* TEXT COLOR FOR MOST CITE */
+    --hover-color: #e1dac5; /* HOVER COLOR FOR BUTTONS */
+    --active-color: #e2dacf;
+    --white-border: #ffffff;
 
-/* background */
-.threeD::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    background-image: url("img/Artboard 1.png");
-    background-repeat: repeat;
-    background-size: 900px;
-    opacity: 0.2;
+    /* ANY MISSING COLORS OR NEEDED ADD HERE AND REPLACE W VARS WITHIN THE WEBSITE  */
 }
 
 /* Shared page widths */
@@ -52,7 +43,6 @@ body {
 .about,
 .home-featured,
 .skills,
-.home-link,
 .landingHero,
 .category,
 .videoarthero,
@@ -60,8 +50,8 @@ body {
     background-color: var(--background-color);
     border-radius: 10px;
 
-    border-top: 5px solid #ffffff;
-    border-left: 5px solid #ffffff;
+    border-top: 5px solid var(--white-border);
+    border-left: 5px solid var(--white-border);
     border-right: 5px solid var(--border-color);
     border-bottom: 5px solid var(--border-color);
 }
@@ -70,27 +60,29 @@ body {
 .hero-buttons a,
 .viewMore,
 .project a,
-.smallProject a {
+.smallProject a,
+.home-link {
     display: inline-block;
-    padding: 5px 5px;
-    font-family: inherit;
-    font-weight: 600;
+    padding: 7px 10px;
+    font-weight: 400;
     text-decoration: none;
-    color: #ffffff;
-    background-color: var(--primary-color);
+
+    color: var(--text-color);
+    background-color: var(--button-color);
     border-radius: 5px;
-    border-top: 3px solid #ffffff;
-    border-left: 3px solid #ffffff;
-    border-right: 3px solid var(--border-color);
-    border-bottom: 3px solid var(--border-color);
+    border-top: 4px solid var(--white-border);
+    border-left: 4px solid var(--white-border);
+    border-right: 4px solid var(--buttonborder-color);
+    border-bottom: 4px solid var(--buttonborder-color);
     cursor: pointer;
 }
 
 .hero-buttons a:hover,
 .viewMore:hover,
 .project a:hover,
-.smallProject a:hover{
-    color: #ffffff;
+.smallProject a:hover,
+.home-link:hover {
+    color: var(--text-color);
     background-color: var(--hover-color);
 }
 
@@ -98,13 +90,15 @@ body {
 .viewMore:active,
 .smallProject a:active,
 .project a:active,
-.skill-list li:active{
-    background-color: var(--active-color);
+.skill-list li:active,
+.home-link:active {
     transform: translate(2px, 2px);
-    border-top: 3px solid var(--border-color);
-    border-left: 3px solid var(--border-color);
-    border-right: 3px solid #ffffff;
-    border-bottom: 3px solid #ffffff;
+
+    background-color: var(--button-color); 
+    border-top: 4px solid var(--buttonborder-color);
+    border-left: 4px solid var(--buttonborder-color);
+    border-right: 4px solid var(--white-border);
+    border-bottom: 4px solid var(--white-border);
 }
 
 
@@ -147,12 +141,12 @@ nav a {
     padding: 5px 14px;
     font-size: 12px;
     height: 30px;
-    background-color: var(--active-color);
+    background-color: var(--button-color); 
     border-radius: 5px;
-    border-top: 4px solid #ffffff;
-    border-left: 4px solid #ffffff;
-    border-right: 4px solid var(--border-color);
-    border-bottom: 4px solid var(--border-color);
+    border-top: 3px solid var(--white-border);
+    border-left: 3px solid var(--white-border);
+    border-right: 3px solid var(--buttonborder-color);
+    border-bottom: 3px solid var(--buttonborder-color);
     font-family: 'Courier New', monospace;
     font-weight: bold;
     cursor: pointer;
@@ -166,15 +160,15 @@ nav a {
 
 nav a:hover {
     color: #000000;
-    background-color: #f0f0f0;
+    background-color: var(--hover-color);
 }
 
 nav a:active {
-    background-color: #d8deec;
-    border-top: 4px solid var(--border-color);
-    border-left: 4px solid var(--border-color);
-    border-right: 4px solid var(--background-color);
-    border-bottom: 4px solid var(--background-color);
+    background-color: var(--active-color);
+    border-top: 3px solid var(--buttonborder-color);
+    border-left: 3px solid var(--buttonborder-color);
+    border-right: 3px solid var(--white-border);
+    border-bottom: 3px solid var(--white-border);
 }
 
 /* Previous page button */
@@ -192,8 +186,8 @@ nav a:active {
     color: var(--text-color);
     background-color: var(--background-color);
     border-radius: 5px;
-    border-top: 3px solid #ffffff;
-    border-left: 3px solid #ffffff;
+    border-top: 3px solid var(--white-border);
+    border-left: 3px solid var(--white-border);
     border-right: 3px solid var(--border-color);
     border-bottom: 3px solid var(--border-color);
     cursor: pointer;
@@ -249,7 +243,7 @@ nav a:active {
 .hero-left {
     width: 100%;
     align-self: stretch;
-
+    font-family: "Noto Sans Mono", monospace;
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -268,11 +262,9 @@ nav a:active {
     font-weight: 700;
     margin-bottom: 0;
     letter-spacing: -1px;
-    font-family: "Noto Sans Mono", monospace;
 }
 
 .hero-left p {
-    font-family: "Noto Sans Mono", monospace;
     font-size: 14px;
     margin-top: 0;
 }
@@ -284,7 +276,7 @@ nav a:active {
     margin: 0;
     padding: 22px;
     flex-direction: column;
-    gap: 18px;
+    gap: 20px;
 }
 
 .hero-right img {
@@ -297,7 +289,7 @@ nav a:active {
 }
 
 .contact {
-    border-top: 2px solid #c7cadb;
+    border-top: 2px solid var(--border-color);
     padding-top: 12px;
     display: flex;
     align-items: center;
@@ -381,7 +373,7 @@ nav a:active {
 
 .skill-group+.skill-group {
     padding-left: 12px;
-    border-left: 2px solid #c7cadb;
+    border-left: 2px solid var(--border-color);
 }
 
 .skill-group h3 {
@@ -406,14 +398,15 @@ nav a:active {
     font-family: "DM Mono", monospace;
     font-size: 12px;
     white-space: nowrap;
-    background-color: #d8deec;
+    background-color: var(--secondborder-color);
     border-radius: 4px;
     transition: transform 0.2s ease;
+    background-color: var(--button-color); 
 
-    border-top: 3px solid #ffffff;
-    border-left: 3px solid #ffffff;
-    border-right: 3px solid #9fa1bb;
-    border-bottom: 3px solid #9fa1bb;
+    border-top: 3px solid var(--white-border);
+    border-left: 3px solid var(--white-border);
+    border-right: 3px solid var(--buttonborder-color);
+    border-bottom: 3px solid var(--buttonborder-color);
 
     cursor: default;
     touch-action: manipulation;
@@ -520,29 +513,29 @@ nav a:active {
     padding: 0;
     font-size: 24px;
     font-weight: 700;
-    color: #ffffff;
-    background-color: #8a8eb9;
+    color: var(--text-color);
+    background-color: var(--button-color);
     border-radius: 5px;
 
-    border-top: 2px solid #ffffff;
-    border-left: 2px solid #ffffff;
-    border-right: 2px solid #636474;
-    border-bottom: 2px solid #6d6e7f;
+    border-top: 3px solid var(--white-border);
+    border-left: 3px solid var(--white-border);
+    border-right: 3px solid var(--buttonborder-color);
+    border-bottom: 3px solid var(--buttonborder-color);
     cursor: pointer;
 }
 
 .slider-button:hover {
-    background-color: #9ca0cc;
+    background-color: var(--hover-color);
 }
 
 .slider-button:active {
     background-color: var(--active-color);
     transform: translate(2px, 2px);
 
-    border-top: 2px solid #636474;
-    border-left: 2px solid #6d6e7f;
-    border-right: 2px solid #ffffff;
-    border-bottom: 2px solid #ffffff;
+    border-top: 3px solid var(--buttonborder-color);
+    border-left: 3px solid var(--buttonborder-color);
+    border-right: 2px solid var(--white-border);
+    border-bottom: 2px solid var(--white-border);
 }
 
 /* Slider dots */
@@ -559,24 +552,27 @@ nav a:active {
     height: 14px;
     padding: 0;
 
-    background-color: #d8deec;
-    border: 2px solid #8a8eb9;
+    background-color: var(--button-color);
+    border: 2px solid var(--buttonborder-color);
     border-radius: 50%;
 
     cursor: pointer;
 }
 
 .slider-dot.active {
-    background-color: #8a8eb9;
+    background-color: var(--active-color);
 }
 
 /* Homepage links */
 .home-link {
+    color: #000000;
+    background-color: var(--button-color);
     display: flex;
     flex-direction: column;
     justify-content: center;
 
     min-width: 0;
+    border-radius: 5px;
     padding: 22px;
 
     color: #000000;
@@ -601,18 +597,10 @@ nav a:active {
 }
 
 .home-link:hover {
-    background-color: #dbdce8;
+    background-color: var(--hover-color);
     transform: scale(1.01);
 }
 
-.home-link:active {
-    transform: translate(1px, 1px);
-    background-color: var(--active-color);
-    border-top-color: var(--border-color);
-    border-left-color: var(--border-color);
-    border-right-color: #ffffff;
-    border-bottom-color: #ffffff;
-}
 
 .digital-link {
     grid-area: digital;
@@ -668,8 +656,8 @@ nav a:active {
     text-decoration: none;
     background-color: #d8deec;
     border-radius: 8px;
-    border-top: 4px solid #ffffff;
-    border-left: 4px solid #ffffff;
+    border-top: 4px solid var(--white-border);
+    border-left: 4px solid var(--white-border);
     border-right: 4px solid #9fa1bb;
     border-bottom: 4px solid #9fa1bb;
     cursor: pointer;
@@ -688,8 +676,8 @@ nav a:active {
     background-color: var(--active-color);
     border-top-color: var(--border-color);
     border-left-color: var(--border-color);
-    border-right-color: #ffffff;
-    border-bottom-color: #ffffff;
+    border-right-color: var(--white-border);
+    border-bottom-color: var(--white-border);
 }
 
 .smallProject h2 {
@@ -811,13 +799,13 @@ nav a:active {
     padding: 30px;
     margin-top: 40px;
     height: 100%;
-    max-width: 1000px;
+    max-width: 1070px;
     margin: 0 auto;
     background-color: var(--background-color);
     border-radius: 10px;
 
-    border-top: 5px solid #ffffff;
-    border-left: 5px solid #ffffff;
+    border-top: 5px solid var(--white-border);
+    border-left: 5px solid var(--white-border);
     border-right: 5px solid var(--border-color);
     border-bottom: 5px solid var(--border-color);
 }
@@ -854,7 +842,7 @@ nav a:active {
 
 .lineHeroImg {
     filter: drop-shadow(7px 7px 0 #c7c7cb);
-    width: 400px;
+    width: 500px;
     border-radius: 5px;
     height: auto;
     padding: 10px;
@@ -921,6 +909,19 @@ footer {
         margin-top: 20px;
         object-fit: cover;
         border-radius: 6px;
+    }
+    .lineHeroText {
+        flex-direction: column;
+        justify-content: center;
+        gap: 30px;
+        margin: auto 0;
+        padding-bottom: 20px;
+        border-bottom: 2px solid var(--border-color);
+    }
+    .lineHeroImg {
+        width: 100%;
+        max-width: 500px;
+        height: 300px;
     }
 
 }
@@ -995,7 +996,7 @@ footer {
         padding-left: 0;
         padding-top: 18px;
         border-left: none;
-        border-top: 2px solid #9fa1bb;
+        border-top: 2px solid var(--border-color);
     }
 
     .skill-list li {
@@ -1054,17 +1055,17 @@ footer {
         gap: 30px;
         margin: auto 0;
         padding-bottom: 20px;
-        border-bottom: 2px solid #9fa1bb;
+        border-bottom: 2px solid var(--border-color);
     }
 
     .lineHeroImg {
         width: 100%;
-        max-width: 400px;
+        max-width: 500px;
         height: auto;
     }
 }
 
-@media (min-width: 701px) {
+@media (min-width: 901px) {
     .lineHeroText:nth-of-type(odd) {
         flex-direction: row-reverse;
     }
