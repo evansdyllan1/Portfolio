@@ -69,17 +69,14 @@ const featuredProjects = [
     link: "videoart.html",
   },
   {
-    title: "The Warehouse",
+    title: "Visual Field",
     description:
-      "A short video clip using foley and different sounds to describe a horror in the Warehouse.",
-    image: "img/WarehouseStill.png",
-    alt: "Preview of the 3D Portfolio project",
+      "Audiences shape a dynamic color space rendered with lines evoking topographical maps and nautical charts. Guided by visible gestures, participants expand, contract, and manipulate the central orb, engaging in a real-time dialogue of action and reflection.",
+    image: "img/Dyllan.png",
+    alt: "Visual Field project preview",
     link: "interactive.html",
   },
 ];
-
-const featuredSection = document.querySelector(".home-featured");
-const featuredCard = document.querySelector(".featured-project");
 
 const featuredImage = document.querySelector("#featured-image");
 const featuredTitle = document.querySelector("#featured-title");
@@ -90,9 +87,8 @@ const previousButton = document.querySelector(".previous-project");
 const nextButton = document.querySelector(".next-project");
 const dotsContainer = document.querySelector(".slider-dots");
 
-let currentProject = 0;
-let touchStartX = 0;
-let touchEndX = 0;
+// Pick a random project whenever the page loads
+let currentProject = Math.floor(Math.random() * featuredProjects.length);
 
 function createDots() {
   featuredProjects.forEach((project, index) => {
@@ -109,22 +105,6 @@ function createDots() {
     dotsContainer.appendChild(dot);
   });
 }
-
-function handleTouchStart(event) {
-  touchStartX = event.touches[0].clientX;
-}
-
-function handleTouchMove(event) {
-  touchEndX = event.touches[0].clientX;
-}
-
-function handleTouchEnd() {
-  handleSwipe();
-}
-
-featuredCard.addEventListener("touchstart", handleTouchStart);
-featuredCard.addEventListener("touchmove", handleTouchMove);
-featuredCard.addEventListener("touchend", handleTouchEnd);
 
 function updateDots() {
   const dots = document.querySelectorAll(".slider-dot");
@@ -169,19 +149,6 @@ function showPreviousProject() {
 
 function showNextProject() {
   showProject(currentProject + 1);
-}
-
-function handleSwipe() {
-  const swipeDistance = touchEndX - touchStartX;
-  const minimumSwipeDistance = 50;
-
-  if (swipeDistance > minimumSwipeDistance) {
-    showPreviousProject();
-  }
-
-  if (swipeDistance < -minimumSwipeDistance) {
-    showNextProject();
-  }
 }
 
 previousButton.addEventListener("click", showPreviousProject);
