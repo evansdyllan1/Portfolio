@@ -29,7 +29,7 @@ body {
     --hover-color: #e1dac5;
     /* HOVER COLOR FOR BUTTONS */
     --active-color: #e2dacf;
-    --white-border: #ffffff;
+    --white-border: #f8f8f8;
 
     /* ANY MISSING COLORS OR NEEDED ADD HERE AND REPLACE W VARS WITHIN THE WEBSITE  */
 }
@@ -290,7 +290,7 @@ nav a:active {
     width: 930px;
     overflow: hidden;
     max-width: 100%;
-    filter: drop-shadow(7px 7px 0 #c7c7cb);
+    filter: drop-shadow(7px 7px 0 #c7cbc7);
     border-radius: 5px;
 }
 
@@ -481,7 +481,7 @@ nav a:active {
     min-height: 0;
     object-fit: cover;
     border-radius: 5px;
-    filter: drop-shadow(7px 7px 0 #c7c7cb);
+    filter: drop-shadow(7px 7px 0 #c7cbc7);
 }
 
 /* Arrows now align with the text */
@@ -629,7 +629,7 @@ nav a:active {
 .iconHero {
     width: 300px;
     height: 170px;
-    filter: drop-shadow(7px 7px 0 #c7c7cb);
+    filter: drop-shadow(7px 7px 0 #c7cbc7);
 
 }
 
@@ -802,7 +802,7 @@ nav a:active {
     object-fit: cover;
     border-radius: 10px;
 
-    filter: drop-shadow(7px 7px 0 #c7c7cb);
+    filter: drop-shadow(7px 7px 0 #c7cbc7);
 }
 
 /* Projects landing page */
@@ -863,7 +863,6 @@ nav a:active {
 
     object-fit: cover;
     border-radius: 6px;
-
     filter: drop-shadow(7px 7px 0 #c7c7cb);
 }
 
