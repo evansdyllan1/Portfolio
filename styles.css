@@ -907,29 +907,76 @@ nav a:active {
     padding: 20px 10px;
     display: flex;
     flex-direction: row;
+    font-family: "DM Mono", monospace;
     justify-content: space-between;
-    gap: 50px;
+    gap: 10px;
+    font-size: 14px;
     margin: auto 0;
 }
 
 .lineHeroImg {
     filter: drop-shadow(7px 7px 0 #c7c7cb);
     width: 500px;
+    height: 250px;
     border-radius: 5px;
-    height: auto;
     padding: 10px;
+    justify-content: center;
+    margin: 0 auto;
 }
 
+.lineHeroCollage {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+
+  width: min(100%, 900px);
+  margin: 0 auto;
+}
+
+.lineHeroCollage img {
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  border-radius: 12px;
+}
 
 /* Footer */
 footer {
     margin-top: 30px;
-    padding: 14px;
-
-    color: #2a1331;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
     font-size: 14px;
     text-align: center;
 }
+
+footer p {
+    margin: 0;
+}
+
+footer div {
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+footer a {
+    flex: 1;
+    color: inherit;
+    text-decoration: none;
+    text-align: center;
+}
+
+footer a:hover {
+    transform: scale(1.1);
+}
+
 
 .home-page footer {
     margin-top: 0;
@@ -1161,6 +1208,10 @@ footer {
 
     .projectCardText h2 {
         font-size: 24px;
+    }
+
+    footer {
+        font-size: 12px;
     }
 }
 
