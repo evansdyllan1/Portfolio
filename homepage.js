@@ -66,7 +66,7 @@ const featuredProjects = [
       "Capstone Project 2026, Planned and built a full stack web system with the simple idea of growth.",
     image: "img/artmarket.png",
     alt: "The Art Market",
-    link: "videoart.html",
+    link: "art-market.html",
   },
   {
     title: "Visual Field",
@@ -74,7 +74,7 @@ const featuredProjects = [
       "Audiences shape a dynamic color space rendered with lines evoking topographical maps and nautical charts. Guided by visible gestures, participants expand, contract, and manipulate the central orb, engaging in a real-time dialogue of action and reflection.",
     image: "img/Dyllan.png",
     alt: "Visual Field project preview",
-    link: "interactive.html",
+    link: "visual-field.html",
   },
 ];
 
