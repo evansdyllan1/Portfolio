@@ -1,4 +1,23 @@
 "use strict";
+import * as THREE from "three";
+import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
+
+let lastScrollY = window.scrollY;
+
+window.addEventListener("scroll", () => {
+    const taskbar = document.querySelector("nav");
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY > lastScrollY + 5 && currentScrollY > 50) {
+        taskbar.classList.add("hidden");
+    }
+
+    if (currentScrollY < lastScrollY - 5) {
+        taskbar.classList.remove("hidden");
+    }
+
+    lastScrollY = currentScrollY;
+});
 
 const titleElement = document.getElementById("typewriter-text");
 const descriptionElement = document.getElementById("typewriter-description");
