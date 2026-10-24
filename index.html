@@ -16,7 +16,7 @@
     <div class="taskbar">
       <nav>
         <ul>
-          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html" id="top">Home</a></li>
           <li><a href="digital-landing.html">Digital Art</a></li>
           <li><a href="projects-landing.html">Projects</a></li>
         </ul>
@@ -58,63 +58,68 @@
         </div>
       </section>
       <section id="featured" class="home-featured">
-        <div class="featured-slider">
-          <article class="featured-project">
-            <h2>Featured Projects</h2>
-            <img id="featured-image" src="linenotes.png" alt="Line Notes" />
-
-            <div class="featured-info-row">
-              <button
-                class="slider-button previous-project"
-                type="button"
-                aria-label="Previous project"
-              >
-                &larr;
-              </button>
-
-              <div class="featured-project-text">
-                <h3 id="featured-title">Line Notes</h3>
-
-                <p id="featured-description">
-                  An interactive web project that visualized ancestry through
-                  technology using Three.js, WebGL, and frontend development.
-                </p>
-
-                <a id="featured-link" class="viewMore" href="line-notes.html">
-                  View Project
-                </a>
-              </div>
-
-              <button
-                class="slider-button next-project"
-                type="button"
-                aria-label="Next project"
-              >
-                &rarr;
-              </button>
-            </div>
-          </article>
-          <div class="slider-dots"></div>
+        <div class="featured-header">
+          <span>SELECTED WORK / <span id="featured-number">001</span></span>
+          <span>EXPLORE THE ARCHIVE</span>
         </div>
-        <div class="explore-buttons">
-          <a class="home-link digital-link" href="digital-landing.html">
-            <h2>Digital Art</h2>
-            <p>
-              Explore my video art, 2D and 3D work, animation, and experimental
-              digital media.
-            </p>
-            <span>Explore Digital Art &rarr;</span>
-          </a>
-          <a class="home-link projects-link" href="projects-landing.html">
-            <h2>Web Projects</h2>
-            <p>
-              Explore my websites, frontend development, Three.js work, and
-              interactive experiences.
-            </p>
-            <span>Explore Projects &rarr;</span>
-          </a>
+        <div class="featured-content">
+          <div class="featured-slider">
+            <article class="featured-project">
+              <h2>Featured Projects</h2>
+              <img id="featured-image" src="linenotes.png" alt="Line Notes" />
+              <div class="featured-info-row">
+                <button
+                  class="slider-button previous-project"
+                  type="button"
+                  aria-label="Previous project"
+                >
+                  &larr;
+                </button>
+                <div class="featured-project-text">
+                  <h3 id="featured-title">Line Notes</h3>
+                  <p id="featured-description">
+                    An interactive web project that visualized ancestry through
+                    technology using Three.js, WebGL, and frontend development.
+                  </p>
+                  <a id="featured-link" class="viewMore" href="line-notes.html">
+                    View Project
+                  </a>
+                </div>
+                <button
+                  class="slider-button next-project"
+                  type="button"
+                  aria-label="Next project"
+                >
+                  &rarr;
+                </button>
+              </div>
+            </article>
+
+            <div class="slider-dots"></div>
+          </div>
+
+          <div class="explore-buttons">
+            <a class="home-link digital-link" href="digital-landing.html">
+              <h2>Digital Art</h2>
+              <p>
+                Explore my video art, 2D and 3D work, animation, and
+                experimental digital media.
+              </p>
+              <span>Explore Digital Art &rarr;</span>
+            </a>
+
+            <a class="home-link projects-link" href="projects-landing.html">
+              <h2>Web Projects</h2>
+              <p>
+                Explore my websites, frontend development, Three.js work, and
+                interactive experiences.
+              </p>
+              <span>Explore Projects &rarr;</span>
+            </a>
+          </div>
         </div>
       </section>
+
       <section id="about" class="about">
         <div class="aboutText">
           <div>
