@@ -1,7 +1,7 @@
 /* Global */
 html {
     scroll-behavior: smooth;
-        font-family: "Karla", sans-serif;
+    font-family: "Karla", sans-serif;
     scroll-padding-top: 30px;
 }
 
@@ -14,7 +14,7 @@ body {
     padding: 0;
     font-family: "Karla", sans-serif;
     color: var(--text-color);
-    background-color: #151614;
+    background-color: var(--background-color);
     transition: all 0.2s ease;
 }
 
@@ -26,10 +26,13 @@ body {
     --buttonborder-color: #b8c0b8;
     --border-color: #35473e;
     --text-color: #151a17;
-    --hover-color: #dde2da;
-    --active-color: #cfd7ce;
+    --hover-color: #d5dfd2;
+    --active-color: #b9cbb9;
     --white-border: #fafbf8;
     --accent-color: #1d5a4a;
+    --featured-color: #b4bdb5;
+    --about-color: #f4f8f3;
+    --skills-color: #f4f8f3;
 }
 
 /* Shared page widths */
@@ -110,7 +113,6 @@ nav {
     transition: transform 0.3s ease;
 }
 
-
 nav ul {
     margin: auto 10px;
     padding: 0;
@@ -139,12 +141,15 @@ nav a {
     gap: 10px;
     color: var(--accent-color);
 }
+
 nav a:hover {
     background-color: var(--hover-color);
 }
+
 nav.hidden {
     transform: translateY(-100%);
 }
+
 /* Previous page button */
 
 .previousPage {
@@ -175,17 +180,38 @@ nav.hidden {
 
 .hero {
     width: 100%;
-    min-height: 650px;
+    min-height: 690px;
     margin: 0;
     padding: 80px;
     display: flex;
     align-items: center;
     flex-direction: row;
     gap: 60px;
+    position: relative;
+    isolation: isolate;
+    background: transparent;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 65px 85px;
+    z-index: -1;
+    background-color: var(--background-color);
+    background-image:
+        linear-gradient(rgba(120, 130, 120, 0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(120, 130, 120, 0.07) 1px, transparent 1px);
+    background-size: 55px 55px;
+    background-position: center;
+    border: 2px solid var(--border-color);
+    border-radius: 5px;
+    box-shadow: 12px 14px 0 rgba(53, 71, 62, 0.15);
+    transform: rotate(-2deg);
+    pointer-events: none;
 }
 
 .hero-right {
-    width: 600px;
+    width: 700px;
     min-width: 0;
     display: flex;
     justify-content: center;
@@ -193,6 +219,8 @@ nav.hidden {
 }
 
 .hero-left {
+    width: 100%;
+    max-width: 400px;
     flex: 1;
     min-width: 0;
     display: flex;
@@ -206,10 +234,11 @@ nav.hidden {
 }
 
 .hero-left h2 {
-    font-size: 38px;
+    font-size: 56px;
     font-weight: 700;
     margin-bottom: 0;
-    letter-spacing: .1px;
+    letter-spacing: -1px;
+    line-height: 1.15;
 }
 
 .hero-left p {
@@ -219,12 +248,12 @@ nav.hidden {
 
 .hero-right img {
     display: flex;
-    width: 600px;
-    height: 400px;
+    width: 75%;
+    height: 100%;
     min-height: 0;
     object-fit: cover;
     border-radius: 5px;
-    filter: drop-shadow(7px 7px 0 #c7cbc7);
+    filter: drop-shadow(9px 9px 0 #c7cbc7);
 }
 
 .contact {
@@ -256,6 +285,7 @@ nav.hidden {
 /* Homepage about */
 
 .about {
+    background-color: var(--about-color);
     display: flex;
     flex-direction: row;
 }
@@ -279,6 +309,7 @@ nav.hidden {
 /* Skills */
 
 .skills {
+    background-color: var(--skills-color);
     width: 100%;
     min-height: 300px;
     padding: 30px;
@@ -303,12 +334,11 @@ nav.hidden {
 }
 
 .skill-group {
-    min-width: 0;
-}
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 
-.skill-group + .skill-group {
-    padding-left: 40px;
-    border-left: 2px solid var(--border-color);
 }
 
 .skill-group h3 {
@@ -347,6 +377,7 @@ nav.hidden {
 
 /* Featured projects */
 .home-featured {
+    background-color: var(--featured-color);
     width: 100%;
     min-height: 750px;
     margin: 0;
@@ -370,7 +401,6 @@ nav.hidden {
     margin: 0;
     font-size: 14px;
 }
-
 
 .featured-project {
     width: 100%;
@@ -849,10 +879,12 @@ footer a {
 }
 
 footer a:hover {
-    color: var(--accent-color);
+    color: var(--accent-color)
 }
 
 .home-page footer {
+    background-color: var(--border-color);
+    color: var(--background-color);
     margin-top: 0;
 }
 
@@ -1008,7 +1040,7 @@ footer a:hover {
         gap: 20px;
     }
 
-    .skill-group + .skill-group {
+    .skill-group+.skill-group {
         padding-left: 0;
         padding-top: 18px;
         border-left: none;
