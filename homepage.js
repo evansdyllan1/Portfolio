@@ -17,13 +17,16 @@ window.addEventListener("scroll", () => {
     lastScrollY = currentScrollY;
 });
 
-const titleElement = document.getElementById("typewriter-text");
-const descriptionElement = document.getElementById("typewriter-description");
+let fontSize = 72;
+if (window.innerWidth < 700)
+  fontSize = 32;
+else if (window.innerWidth < 1200)
+  fontSize = 56;
 
-const titleText = "Hi! I'm Dyllan Evans";
+const descriptionElement = document.getElementById("typewriter-description");
 const descriptionText = "Digital Artist & Frontend Developer";
 
-function typeText(element, text, speed, callback) {
+function typeText(element, text, speed) {
   let characterIndex = 0;
 
   function typeNextCharacter() {
@@ -32,23 +35,38 @@ function typeText(element, text, speed, callback) {
       characterIndex++;
 
       setTimeout(typeNextCharacter, speed);
-    } else if (callback) {
-      callback();
     }
   }
 
   typeNextCharacter();
 }
 
-typeText(titleElement, titleText, 100, () => {
-  typeText(descriptionElement, descriptionText, 40);
+const vara = new Vara(
+  "#typewriter-text",
+  "https://cdn.jsdelivr.net/npm/vara@1.4.0/fonts/Satisfy/SatisfySL.json",
+  [
+    {
+      text: "Hi! I'm Dyllan Evans",
+      duration: 2000
+    }
+  ],
+  {
+    fontSize: 62,
+    strokeWidth: 1.7,
+  }
+);
+
+vara.ready(() => {
+  vara.animationEnd(() => {
+    typeText(descriptionElement, descriptionText, 20);
+  });
 });
 
 const icons = document.querySelectorAll(".contact a img");
 
 icons.forEach((icon) => {
   icon.addEventListener("mouseover", () => {
-    icon.style.transform = "scale(1.1)";
+    icon.style.transform = "scale(1.2)";
   });
 
   icon.addEventListener("mouseout", () => {
@@ -60,7 +78,7 @@ const skillTags = document.querySelectorAll(".skill-list li");
 
 skillTags.forEach((tag) => {
   tag.addEventListener("mouseenter", () => {
-    tag.style.transform = "scale(1.1)";
+    tag.style.transform = "scale(1.2)";
   });
 
   tag.addEventListener("mouseleave", () => {

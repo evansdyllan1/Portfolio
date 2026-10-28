@@ -1,0 +1,156 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dyllan Evans | Digital Artist & Developer</title>
+
+    <link rel="stylesheet" href="/redo.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <main>
+      <section class="crt-transition" id="home">
+        <div class="crt-stage">
+          <div class="crt-monitor">
+            <div class="crt-screen">
+              <canvas
+                class="screen-background"
+                id="pixel-background"
+                aria-hidden="true"
+              ></canvas>
+
+              <div class="landing-content">
+                <div class="intro-window">
+                  <div class="window-header">
+                    <span>DYLLAN.EXE</span>
+                    <span class="window-controls">■</span>
+                  </div>
+
+                  <div class="window-content">
+                    <h1>Dyllan<br />Evans</h1>
+                    <p>Digital Artist & Frontend Developer</p>
+                  </div>
+                </div>
+
+                <nav class="landing-navigation" aria-label="Main navigation">
+                  <button type="button" id="projects-button">
+                    &gt; PROJECTS
+                  </button>
+                  <button type="button" id="about-button">
+                    &gt; ABOUT ME
+                  </button>
+                  <button type="button" id="contact-button">
+                    &gt; CONTACT
+                  </button>
+                </nav>
+
+                <div class="landing-panel" id="landing-panel" hidden>
+                  <div class="window-header">
+                    <span id="panel-title">ABOUT.TXT</span>
+                    <button
+                      type="button"
+                      id="panel-close"
+                      aria-label="Close panel"
+                    >×</button>
+                  </div>
+
+                  <div class="window-content" id="panel-content"></div>
+                </div>
+              </div>
+            </div>
+
+            <img
+              class="crt-overlay"
+              src="/img/crt-overlay.png"
+              alt=""
+              aria-hidden="true"
+            />
+          </div>
+
+          <div class="scroll-prompt">
+            SCROLL TO EXPLORE <span>↓</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="workspace" id="workspace">
+        <div class="workspace-header">
+          <div class="workspace-brand">
+            <span class="status-light"></span>
+            DYLLAN_OS / PROJECT EXPLORER
+          </div>
+
+          <button type="button" id="home-button">← HOME</button>
+        </div>
+
+        <div class="workspace-content">
+          <aside class="project-sidebar">
+            <div class="sidebar-heading">DIRECTORY / WORK</div>
+
+            <button class="project-folder active" type="button" data-project="0">
+              <span>▣</span> Line Notes
+            </button>
+
+            <button class="project-folder" type="button" data-project="1">
+              <span>▣</span> The Art Market
+            </button>
+
+            <button class="project-folder" type="button" data-project="2">
+              <span>▣</span> Visual Field
+            </button>
+
+            <div class="sidebar-footer">03 FILES FOUND</div>
+          </aside>
+
+          <div class="project-viewer">
+            <div class="window-header">
+              <span>PREVIEW.EXE</span>
+              <span class="window-controls">■</span>
+            </div>
+
+            <div class="project-image-container">
+              <img
+                id="project-image"
+                src="/img/linenotesbread.png"
+                alt="Line Notes project preview"
+              />
+            </div>
+          </div>
+
+          <aside class="project-details">
+            <div class="window-header">
+              <span>FILE_INFO.TXT</span>
+              <span class="window-controls">■</span>
+            </div>
+
+            <div class="project-details-content">
+              <div class="file-label">SELECTED PROJECT / 001</div>
+              <h2 id="project-title">Line Notes</h2>
+              <p id="project-description"></p>
+
+              <a id="project-link" href="/linenotes.html">
+                OPEN PROJECT ↗
+              </a>
+            </div>
+          </aside>
+        </div>
+
+        <div class="workspace-footer">
+          <span>DYLLAN EVANS © 2026</span>
+          <span>SELECT A FILE TO EXPLORE</span>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="/redo.js"></script>
+  </body>
+</html>

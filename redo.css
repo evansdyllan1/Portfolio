@@ -1,0 +1,541 @@
+
+/* Main colors. The interface stays mostly monochrome while the pixels provide color. */
+:root {
+  --background: #080810;
+  --desktop: #10101c;
+  --window: #ffffff;
+  --window-border: #111111;
+  --text: #111111;
+  --accent: #111111;
+  --highlight: #e5ddff;
+  --electric: #7464ff;
+  --pink: #ff59c7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: "DM Mono", monospace;
+  overflow-x: hidden;
+}
+
+button,
+a {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* The first section holds the CRT in place during the transition. */
+.crt-transition {
+  position: relative;
+  height: 100vh;
+  background: var(--background);
+}
+
+.crt-stage {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.crt-monitor {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  flex-shrink: 0;
+  transform-origin: center center;
+}
+
+.crt-screen {
+  position: absolute;
+  inset: 2% 1%;
+  border-radius: 5% / 9%;
+  overflow: hidden;
+  background: var(--desktop);
+}
+
+/* Canvas is behind all buttons and windows. */
+.screen-background {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--desktop);
+  pointer-events: none;
+}
+
+/* Original CRT frame, displayed above the screen contents. */
+.crt-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.landing-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5%;
+  padding: 6%;
+  z-index: 2;
+}
+
+/* Shared retro-window appearance. */
+.intro-window,
+.landing-panel,
+.project-viewer,
+.project-details {
+  background: var(--window);
+  border: 2px solid var(--window-border);
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.35);
+}
+
+.intro-window {
+  width: 42%;
+  min-height: 48%;
+}
+
+.window-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  background: var(--accent);
+  color: #ffffff;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.window-controls {
+  white-space: nowrap;
+}
+
+.window-content {
+  padding: 28px;
+}
+
+.intro-window h1 {
+  margin: 0 0 25px;
+  font-family: "Press Start 2P", monospace;
+  font-size: clamp(24px, 3.2vw, 52px);
+  font-weight: 400;
+  line-height: 1.45;
+  letter-spacing: -2px;
+}
+
+.intro-window p {
+  margin: 0;
+  font-size: clamp(11px, 1vw, 14px);
+  line-height: 1.8;
+  letter-spacing: 1px;
+}
+
+/* Minimal navigation styled like old computer commands. */
+.landing-navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  width: 24%;
+}
+
+.landing-navigation button {
+  width: auto;
+  padding: 8px 10px;
+  text-align: left;
+  color: #ffffff;
+  background: #111111;
+  border: 1px solid #ffffff;
+  box-shadow: none;
+  font-family: "Press Start 2P", monospace;
+  font-size: clamp(9px, 0.9vw, 13px);
+  line-height: 1.7;
+  white-space: nowrap;
+  transition: background 0.15s, color 0.15s;
+}
+
+.landing-navigation button:hover {
+  background: var(--pink);
+  color: #111111;
+}
+
+.landing-panel {
+  position: absolute;
+  width: min(440px, 75%);
+  max-height: 85%;
+  overflow-y: auto;
+  z-index: 4;
+}
+
+.landing-panel[hidden] {
+  display: none;
+}
+
+#panel-close {
+  border: 1px solid white;
+  color: white;
+  background: transparent;
+  font-size: 18px;
+  line-height: 1;
+}
+
+#panel-content {
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+#panel-content a {
+  color: #5946db;
+}
+
+/* Horizontal interference appears briefly during the screen switch. */
+.screen-glitch {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  opacity: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0px,
+    transparent 3px,
+    rgba(255, 255, 255, 0.3) 4px,
+    rgba(255, 89, 199, 0.3) 6px,
+    transparent 8px
+  );
+  mix-blend-mode: screen;
+}
+
+/* A solid digital shutter covers the screen during the transition. */
+.screen-wipe {
+  position: absolute;
+  inset: 0;
+  z-index: 7;
+  background: #43144b;
+  clip-path: inset(100% 0 0 0);
+  pointer-events: none;
+}
+
+.scroll-prompt {
+  position: absolute;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ffffff;
+  font-size: 11px;
+  letter-spacing: 3px;
+  white-space: nowrap;
+  z-index: 8;
+}
+
+.scroll-prompt span {
+  display: inline-block;
+  margin-left: 8px;
+}
+
+/* Full-screen project explorer. */
+.workspace {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 25px;
+  background: var(--desktop);
+  color: #ffffff;
+}
+
+.workspace-header,
+.workspace-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.workspace-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 500;
+}
+
+.status-light {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--pink);
+  box-shadow: 0 0 8px var(--pink);
+}
+
+#home-button {
+  padding: 9px 16px;
+  border: 2px solid #ffffff;
+  background: #ffffff;
+  color: #111111;
+}
+
+#home-button:hover {
+  background: var(--highlight);
+}
+
+.workspace-content {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 210px minmax(0, 1fr) 290px;
+  gap: 20px;
+}
+
+.project-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px 12px;
+  background: var(--window);
+  border: 2px solid var(--window-border);
+  color: var(--text);
+}
+
+.sidebar-heading,
+.sidebar-footer,
+.file-label {
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: #6655ff;
+}
+
+.sidebar-heading {
+  margin-bottom: 20px;
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  padding-top: 20px;
+}
+
+.project-folder {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px 10px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text);
+  text-align: left;
+  font-size: 12px;
+}
+
+.project-folder span {
+  font-size: 20px;
+  color: #6655ff;
+}
+
+.project-folder:hover,
+.project-folder.active {
+  background: var(--highlight);
+  border-color: var(--window-border);
+}
+
+.project-viewer,
+.project-details {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  color: var(--text);
+}
+
+.project-image-container {
+  display: flex;
+  flex: 1;
+  min-height: 300px;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow: hidden;
+}
+
+#project-image {
+  display: block;
+  width: 100%;
+  max-height: 65vh;
+  object-fit: contain;
+}
+
+.project-details-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 20px;
+  padding: 22px;
+}
+
+.project-details h2 {
+  margin: 0;
+  font-family: "Press Start 2P", monospace;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.project-details p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+#project-link {
+  display: inline-block;
+  align-self: flex-start;
+  margin-top: auto;
+  padding: 12px 15px;
+  background: #111111;
+  border: 2px solid #111111;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+#project-link:hover {
+  background: #6655ff;
+}
+
+.workspace-footer {
+  padding-top: 10px;
+}
+
+/* Tablet layout: move the details panel below the preview. */
+@media (max-width: 900px) {
+  .workspace-content {
+    grid-template-columns: 180px minmax(0, 1fr);
+  }
+
+  .project-details {
+    grid-column: 1 / -1;
+  }
+
+  .intro-window {
+    width: 48%;
+  }
+}
+
+/* Mobile layout: keep the CRT full-screen but stack the landing content. */
+@media (max-width: 700px) {
+  .crt-screen {
+    inset: 2%;
+  }
+
+  .landing-content {
+    flex-direction: column;
+    gap: 14px;
+    padding: 8%;
+  }
+
+  .intro-window {
+    width: 100%;
+    min-height: 0;
+  }
+
+  .intro-window h1 {
+    font-size: clamp(18px, 5vw, 28px);
+  }
+
+  .window-content {
+    padding: 14px;
+  }
+
+  .landing-navigation {
+    width: 100%;
+    align-items: center;
+    gap: 7px;
+  }
+
+  .landing-navigation button {
+    width: 100%;
+    padding: 8px;
+    font-size: 10px;
+  }
+
+  .scroll-prompt {
+    bottom: 14px;
+    font-size: 9px;
+  }
+
+  .workspace {
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .workspace-content {
+    grid-template-columns: 1fr;
+  }
+
+  .project-sidebar {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 12px;
+  }
+
+  .sidebar-heading,
+  .sidebar-footer {
+    width: 100%;
+    margin: 0;
+  }
+
+  .project-folder {
+    width: auto;
+    flex: 1;
+    min-width: 110px;
+    padding: 8px;
+  }
+
+  .project-image-container {
+    min-height: 220px;
+  }
+
+  .project-details {
+    grid-column: auto;
+  }
+
+  .workspace-footer {
+    flex-wrap: wrap;
+    font-size: 10px;
+  }
+}
+
+/* Respect visitors who request reduced animation. */
+@media (prefers-reduced-motion: reduce) {
+  .landing-navigation button {
+    transition: none;
+  }
+}

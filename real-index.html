@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio - Dyllan Evans</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Noto+Sans+Mono:wght@100..900&family=Karla:ital,wght@0,200..800;1,200..800&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="home-page">
+    <div class="taskbar">
+      <nav>
+        <ul>
+          <li><a href="index.html" id="top">Home</a></li>
+          <li><a href="digital-landing.html">Digital Art</a></li>
+          <li><a href="projects-landing.html">Projects</a></li>
+        </ul>
+      </nav>
+    </div>
+    <main class="home-layout">
+      <section class="hero">
+        <div class="hero-right">
+          <img class="hero-image" src="img/Photoredo.png" alt="Dyllan Evans" />
+        </div>
+        <div class="hero-left">
+          <h2 id="typewriter-text"></h2>
+          <!-- Hi! I'm Dyllan Evans -->
+          <p id="typewriter-description"></p>
+          <!-- Digital Artist & Frontend Developer-->
+          <p>she/her</p>
+          <div class="contact" id="contact-icons">
+            <a href="mailto:evansdyllan1@gmail.com">
+              <img class="email-icon" src="img/message.svg" alt="Email Icon" />
+            </a>
+            <a href="https://www.linkedin.com/in/dyllan-evans/" target="_blank">
+              <img
+                class="linkedin-icon"
+                src="img/linkedin-in.svg"
+                alt="LinkedIn Icon"
+              />
+            </a>
+            <a href="https://github.com/evansdyllan1" target="_blank">
+              <img class="github-icon" src="img/github.svg" alt="GitHub Icon" />
+            </a>
+            <a href="Resume.pdf" target="_blank"
+              ><img
+                class="resume-icon"
+                src="img/file-text.svg"
+                alt="Resume Icon"
+              />
+            </a>
+          </div>
+        </div>
+      </section>
+      <section id="featured" class="home-featured">
+        <div class="featured-header">
+          <span>SELECTED WORK / <span id="featured-number">001</span></span>
+          <span>EXPLORE THE ARCHIVE</span>
+        </div>
+        <div class="featured-content">
+          <div class="featured-slider">
+            <article class="featured-project">
+              <h2>Featured Projects</h2>
+              <img id="featured-image" src="linenotes.png" alt="Line Notes" />
+              <div class="featured-info-row">
+                <button
+                  class="slider-button previous-project"
+                  type="button"
+                  aria-label="Previous project"
+                >
+                  &larr;
+                </button>
+                <div class="featured-project-text">
+                  <h3 id="featured-title">Line Notes</h3>
+                  <p id="featured-description">
+                    An interactive web project that visualized ancestry through
+                    technology using Three.js, WebGL, and frontend development.
+                  </p>
+                  <a id="featured-link" class="viewMore" href="line-notes.html">
+                    View Project
+                  </a>
+                </div>
+                <button
+                  class="slider-button next-project"
+                  type="button"
+                  aria-label="Next project"
+                >
+                  &rarr;
+                </button>
+              </div>
+            </article>
+
+            <div class="slider-dots"></div>
+          </div>
+
+          <div class="explore-buttons">
+            <a class="home-link digital-link" href="digital-landing.html">
+              <h2>Digital Art</h2>
+              <p>
+                Explore my video art, 2D and 3D work, animation, and
+                experimental digital media.
+              </p>
+              <span>Explore Digital Art &rarr;</span>
+            </a>
+
+            <a class="home-link projects-link" href="projects-landing.html">
+              <h2>Web Projects</h2>
+              <p>
+                Explore my websites, frontend development, Three.js work, and
+                interactive experiences.
+              </p>
+              <span>Explore Projects &rarr;</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="about">
+        <div class="aboutText">
+          <div>
+            <h2>About Me</h2>
+            <p>
+              Hi! I am Dyllan Evans, and I recently graduated with a Bachelor's
+              in Informatics with a focus in Digital Art and Design, along with
+              a minor in Web Design. I made this portfolio website from scratch
+              as a part of my personal projects to showcase my work in digital
+              art, creative coding, and full-stack web development. I have
+              always had an interest in web development, videography and
+              editing, alongside digital and physical 2D/3D art and
+              illustration. Please feel free to reach out through the buttons
+              above. Enjoy exploring my work and website!
+            </p>
+          </div>
+          <div>
+            <h2>About My Work</h2>
+            <p>
+              I focus in front-end development with a focus on user interaction
+              and experience, I enjoy curating a website that puts the user in
+              mind. This translates to my digital artwork, as I focus on what I
+              want the user to think and feel while experiencing it. Throughout
+              my projects, you will see a continuation of nostalgia with
+              practical design. This is seen in my front-end development through
+              including fun aspects, colors, and design that intrigue the user.
+              As I further my career, I want to continue combining front-end
+              development and digital art to create work that brings creativity
+              into practical technology.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="skills" aria-labelledby="skills-heading">
+        <h2 id="skills-heading">Skills</h2>
+        <div class="skills-columns">
+          <div class="skill-group">
+            <h3>Software</h3>
+
+            <ul class="skill-list" id="skills-list">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+              <li>PHP</li>
+              <li>Python</li>
+              <li>Figma</li>
+              <li>Three.js</li>
+              <li>WebGL</li>
+              <li>Github</li>
+            </ul>
+          </div>
+
+          <div class="skill-group">
+            <h3>Art</h3>
+
+            <ul class="skill-list" id="skills-list">
+              <li>Blender 3D modeling</li>
+              <li>Animation</li>
+              <li>Premiere Pro</li>
+              <li>Illustrator</li>
+              <li>Pencil / 3D Illustration</li>
+              <li>Interactive Media</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>Made by Dyllan Evans</p>
+      <div>
+        <a href="digital-landing.html">Digital Art</a>
+        <a href="projects-landing.html">Projects</a>
+        <a href="art-market.html">Art Market</a>
+        <a href="linenotes.html">Line Notes</a>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/vara@1.4.0/lib/vara.min.js"></script>
+    <script type="module" src="/homepage.js"></script>
+  </body>
+</html>

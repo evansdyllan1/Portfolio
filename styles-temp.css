@@ -1,0 +1,84 @@
+
+.home-page {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(246, 255, 240);
+}
+
+.home-page main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.construction {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    max-width: 100%;
+    margin: auto;
+    padding: 60px 30px;
+    box-sizing: border-box;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+}
+
+.construction-label {
+    font-family: "DM Mono", monospace;
+    font-size: 12px;
+    letter-spacing: 2px;
+    opacity: 0.6;
+    margin: 0;
+}
+
+.construction h2 {
+    font-family: "Libre Franklin", sans-serif;
+    font-size: 46px;
+    font-weight: 500;
+    line-height: 1.15;
+    letter-spacing: -2px;
+    margin: 0;
+}
+
+.construction p {
+    font-family: "Karla", sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.construction .contact {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    margin-top: 16px;
+}
+
+.construction .contact a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.construction .contact a:hover {
+    opacity: 0.5;
+    transform: translateY(-3px);
+}
+
+.construction .contact img {
+    width: 24px;
+    height: 24px;
+}
+
+.home-page footer {
+    padding: 24px 30px;
+    text-align: center;
+    font-family: "DM Mono", monospace;
+    font-size: 11px;
+    opacity: 0.5;
+}
